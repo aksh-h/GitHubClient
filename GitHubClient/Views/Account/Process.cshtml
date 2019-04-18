@@ -2,7 +2,33 @@
 @{
     ViewBag.Title = "Process";
 }
-
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/AppScript/Begin.js"></script>
 <h2>Process</h2>
 <h4>Token : @ViewBag.Response</h4>
+<input type="hidden" id="token" value="@ViewBag.Response" />
 
+<div class="col-sm-12">
+    <h4>Import Repo to user Github account</h4>
+    <span>
+        Observations
+    </span>
+    <ul>
+        <li>GitHub fork is only enabled for GitHub Apps and for OAuth Apps. Refer - <a href="https://developer.github.com/v3/repos/forks/" target="_blank">GitHub Fork</a></li>
+        <li>So instead of forking the repo, we are copying the repo to User GitHub Account</li>
+    </ul>
+
+    <span>Actions Performing</span>
+    <ul>
+        <li>Authenticate Using GitHub login</li>
+        <li>Token will be returned</li>
+        <li>Using the token, get the GitHub Id</li>
+        <li>Using GitHub Id and Token Create Repo and Import Source code to repo</li>
+        <li>For now we are importing PartsUnlimited Repo as a sample, once you use this, check your repo for Parts Unlimited repo or Parts Unlimited_{GUID}</li>
+    </ul>
+
+
+</div>
+<div class="container col-sm-6">
+    <button type="button" class="btn btn-primary" id="start">Import Repo</button>
+</div>

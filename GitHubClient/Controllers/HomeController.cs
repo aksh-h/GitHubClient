@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace GitHubClient.Controllers
+namespace GitHubClientApp.Controllers
 {
     public class HomeController : Controller
     {

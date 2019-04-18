@@ -1,0 +1,9 @@
+{
+  "name": "$RepoName$",
+  "description": "",
+  "homepage": "https://github.com",
+  "private": false,
+  "has_issues": false,
+  "has_projects": true,
+  "has_wiki": true
+}
