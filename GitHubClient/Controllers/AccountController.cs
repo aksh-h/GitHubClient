@@ -1,7 +1,6 @@
 ﻿using GitHubAPIs;
 using GitHubClientApp.Models;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
 using System.Web.Mvc;
@@ -122,8 +121,14 @@ namespace GitHubClientApp.Controllers
             {
                 GitHubConfiguration repoCon = new GitHubConfiguration { baseAddress = baseAddress, mediaType = "application/json", scheme = "Bearer", token = token, userName = userDetail.login };
                 Repository repo = new Repository(repoCon);
+                string forkRepoName = "octocat/Hello-World";
+                repo.ForkRepo(forkRepoName, userDetail.login);
 
-                //Reading Create Repo JSON and Source code import JSON
+                /*
+                
+
+
+            //Reading Create Repo JSON and Source code import JSON
                 string createRepoJson = accessDetails.ReadJsonFile(jsonFilePath + "CreateRepo.json");
                 string srcCodeImportJson = accessDetails.ReadJsonFile(jsonFilePath + "SourceImport.json");
 
@@ -151,6 +156,10 @@ namespace GitHubClientApp.Controllers
                 }
                 // Import the source code to user repo[to newly created repo], this is an async process which takes some time to import repo
                 repo.ImportRepository(srcCodeImportJson, GitHubRepo.owner.login, GitHubRepo.name);
+
+                       
+                */
+
             }
             return new string[] { };
         }
